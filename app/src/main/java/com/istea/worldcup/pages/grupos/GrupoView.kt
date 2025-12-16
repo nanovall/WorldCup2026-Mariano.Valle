@@ -43,6 +43,7 @@ fun GruposView(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
         ) {
+            BackgroundImage()
             when (state) {
                 GruposState.Cargando -> Cargando()
                 is GruposState.Resultado -> GroupsList(grupos = state.grupos){
@@ -90,7 +91,7 @@ fun GroupCardView(
             Spacer(modifier = Modifier.height(12.dp))
             grupo.teams.forEach { team ->
                 Text(
-                    text = "Chile",
+                    text = team,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center
